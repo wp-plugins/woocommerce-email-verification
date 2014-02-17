@@ -28,8 +28,8 @@ Download the zip file and extract it. Upload "woocommerce email verification" fo
 
 == Screenshots ==
 
-1. http://www.backraw.com/plugins/images/screenshot-4.jpg
-2. http://www.backraw.com/plugins/images/screenshot-5.jpg
+1. 
+2. 
 
 
 
