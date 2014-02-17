@@ -3,10 +3,7 @@ class WEV_Email_Verification{
 
 	public $customer_id;
 	public function __construct(){
-
-		register_activation_hook(__FILE__, array( $this, 'install' ));
-		register_deactivation_hook(__FILE__, array( $this, 'uninstall' ));
-
+		
 		add_shortcode( 'woocommerce-email-verification', array( $this, 'add_shortcode' ) );
 		add_action( 'user_register', array( $this, 'create_temp_user' ) );
 
@@ -156,32 +153,16 @@ class WEV_Email_Verification{
 		$headers = "Content-Type: text/htmlrn";
 
 		$subject = 'Activate your '.$blogname.' account'; 
-		$message = 'Hello,'. $un.'<br/>';
-		$message .= 'Please visit this link to activate your account:';
+		$message = 'Hello '. $un.',<br/><br/>';
+		$message .= 'To activate your account and access the feature you were trying to view, copy and paste the following link into your web browser:';
 		$message .= "<br/>";
-		$message .= home_url('/').'activate?id='.$un.'&passkey='.$hash;    
+		$message .= home_url('/').'activate?id='.$un.'&passkey='.$hash;
+		$message .= "<br/><br/>";
+		$message .= "Thank you for registering with us.";
+		$message .= '<br/><br/>Yours sincerely,<br/>'.$blogname;
+
 
 		woocommerce_mail($to, $subject, $message, $headers, $attachments);
 		return;
-	}
-
-	public function install(){
-		global $wpdb, $wp_version;
-
-		if($wpdb->get_var("show tables like '".wev_temp_user. "'") != wev_temp_user){
-		$sSql = "CREATE TABLE IF NOT EXISTS `". wev_temp_user. "` (";
-		$sSql = $sSql . "`user_id` INT NOT NULL AUTO_INCREMENT ,";
-		$sSql = $sSql . "`user_name` TEXT NOT NULL,";
-		$sSql = $sSql . "`user_pass` TEXT NOT NULL,";
-		$sSql = $sSql . "`user_email` TEXT NOT NULL,";
-		$sSql = $sSql . "`confirm_code` TEXT NOT NULL,";
-		$sSql = $sSql . "PRIMARY KEY (`user_id`)";
-		$sSql = $sSql . ")";
-		$wpdb->query($sSql);
-	}
-	}
-
-	public function uninstall(){
-
 	}
 }
