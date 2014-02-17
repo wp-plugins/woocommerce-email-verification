@@ -18,13 +18,18 @@ WooCommerce email verification plugin sends a verification link on users email t
 
 **Installation Instruction & Configuration**  	
 
-1.In the admin panel plugins page click Add New. Then click on "upload" link. Select the downloaded zip file and install it OR
+1. In the admin panel plugins page click Add New. Then click on "upload" link. Select the downloaded zip file and install it OR
 Download the zip file and extract it. Upload "woocommerce email verification" folder  to your plugins directory (wp-content/plugins/).
 
-2.Activate the plugin through the 'Plugins' menu in WordPress. 	
+2. Activate the plugin through the 'Plugins' menu in WordPress. 	
 
 3. Create a page with name "activate". (URL should be yourwebsitedomain.com/activate) and put the following short code and save it.
 [woocommerce-email-verification]
+
+== Screenshots ==
+
+1. http://www.backraw.com/plugins/images/screenshot-4.jpg
+2. http://www.backraw.com/plugins/images/screenshot-5.jpg
 
 
 
