@@ -36,6 +36,7 @@ class WEV_Email_Verification{
 
 	$data = $wpdb->get_row($sSql, ARRAY_A);
 
+
 	// Preset the form fields
 	$form = array(
 		'user_email' => $data['user_email'],
@@ -76,7 +77,7 @@ class WEV_Email_Verification{
 
 	if(is_null(username_exists( $username ))){
 
-			$reg_date = date("Y-m-d H:i:s");
+		$reg_date = date("Y-m-d H:i:s");
 
 								$sql = $wpdb->prepare(
 			"INSERT INTO `".wp_users."`
@@ -85,14 +86,15 @@ class WEV_Email_Verification{
 			array($username,$password,$email,$username, $username,$reg_date)
 		);
 
-			$customer_id =	$wpdb->query($sql);
 
-			$user_id = get_user_by( 'email', $email);
-			$ud = $user_id->ID;
+			//Assign Role
+			$user = get_user_by( 'user_email', $email);
+            $user->set_role( 'customer' );
 
-			$user = new WP_User( $ud );
-			$user ->add_role( 'customer' );
-	
+
+
+		$customer_id =	$wpdb->query($sql);
+
 	do_action( 'woocommerce_created_customer', $customer_id, $new_customer_data, $password_generated);
 	return true;
 
@@ -153,7 +155,7 @@ class WEV_Email_Verification{
 
 			if ( ! is_object( $woocommerce ) || version_compare( $woocommerce->version, '2.1', '<' ) ) {
 
-					$p = 	$woocommerce->add_message( 'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
+					$p = 	$woocommerce->add_message( 'Hi there' );
 					echo $p ;
 
 
@@ -178,7 +180,7 @@ class WEV_Email_Verification{
 		$message = 'Hello '. $un.',<br/><br/>';
 		$message .= 'To activate your account and access the feature you were trying to view, copy and paste the following link into your web browser:';
 		$message .= "<br/>";
-		$message .= home_url('/').'activate?passkey='.$hash;
+		$message .= home_url('/').'activate?id='.$un.'&passkey='.$hash;
 		$message .= "<br/><br/>";
 		$message .= "Thank you for registering with us.";
 		$message .= '<br/><br/>Yours sincerely,<br/>'.$blogname;
