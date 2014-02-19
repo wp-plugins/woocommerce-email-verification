@@ -14,6 +14,10 @@ This plugin enables email verification on user registration.
 
 WooCommerce email verification plugin sends a verification link on users email to activate their account on user registration. 
 
+= Help Keep This Plugin Free =
+
+If you find this plugin useful to you, please consider [__making a small donation__](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=subhansanjaya%40gmail%2ecom&lc=GB&item_name=WooCommerce%20Email%20Verification&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest) to help contribute to my time invested and to further development. Your contribution (whatever the amount) would be greatly appreciated.
+
 == Installation ==	
 
 **Installation Instruction & Configuration**  	
