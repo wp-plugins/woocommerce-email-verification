@@ -9,7 +9,6 @@
  * Requires at least: 3.0
  * Tested up to: 3.8
  */
-error_reporting(E_ALL);
 if(! defined( 'ABSPATH' )) exit; // Exit if accessed directly
 
 require('includes/class-wev-email-verification.php');
