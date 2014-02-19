@@ -7,13 +7,13 @@ class WEV_Email_Verification{
 		add_shortcode( 'woocommerce-email-verification', array( $this, 'add_shortcode' ) );
 		add_action( 'user_register', array( $this, 'create_temp_user' ) );
 
-		add_action( 'plugins_loaded', array( $this, 'replace_process_registration' ) );
+	//	add_action( 'plugins_loaded', array( $this, 'replace_process_registration' ) );
 	}
 
 	public function replace_process_registration(){
 	global $woocommerce;
-	remove_action( 'init', 'woocommerce_process_registration' );
-	add_action( 'init', array( $woocommerce, 'process_registration' )  );
+	//remove_action( 'init', 'woocommerce_process_registration' );
+	//add_action( 'init', array( $woocommerce, 'process_registration' )  );
 	}
 
 	public function wev_process_registration(){
