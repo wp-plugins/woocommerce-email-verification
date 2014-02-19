@@ -86,6 +86,13 @@ class WEV_Email_Verification{
 			array($username,$password,$email,$username, $username,$reg_date)
 		);
 
+
+			//Assign Role
+			$user = get_user_by( 'user_email', $email);
+            $user->set_role( 'customer' );
+
+
+
 		$customer_id =	$wpdb->query($sql);
 
 	do_action( 'woocommerce_created_customer', $customer_id, $new_customer_data, $password_generated);
@@ -104,6 +111,8 @@ class WEV_Email_Verification{
 	}
 
 	public function create_temp_user($user_id){
+
+		global $woocommerce;
 
 		if (!$user_id) return;
 
@@ -142,8 +151,23 @@ class WEV_Email_Verification{
 					WHERE `ID` = %d
 					LIMIT 1", $user_id);
 			$wpdb->query($sSql);
-			$p = 	wc_add_notice(  'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
-			echo $p ;
+		
+
+			if ( ! is_object( $woocommerce ) || version_compare( $woocommerce->version, '2.1', '<' ) ) {
+
+					$p = 	$woocommerce->add_message( 'Hi there' );
+					echo $p ;
+
+
+			}else{
+
+
+				$p = 	wc_add_notice(  'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
+				echo $p ;
+
+			}
+
+
 	}
 
 	/* Verification Email */
