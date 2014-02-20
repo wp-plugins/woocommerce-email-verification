@@ -93,7 +93,7 @@ class WEV_Email_Verification{
 			$user = new WP_User( $ud );
 			$user ->add_role( 'customer' );
 	
-	do_action( 'woocommerce_created_customer', $customer_id, $new_customer_data, $password_generated);
+	do_action( 'woocommerce_created_customer', $ud, $new_customer_data, $password_generated);
 	return true;
 
 	}else{
@@ -160,7 +160,7 @@ class WEV_Email_Verification{
 			}else{
 
 
-				$p = 	wc_add_notice(  'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
+				$p = 	wc_add_notice('A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.',$notice_type = 'success');
 				echo $p ;
 
 			}
