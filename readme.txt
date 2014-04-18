@@ -20,13 +20,10 @@ Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-ema
 
 = Primary Premium Features =
 
-*Auto login after account activation.
-
-*One step install (No need to create an activate page).
-
-*Display standard WooCommerce notices (Fixed display issue of the free version).
-
-*Compatible and supports localisation.
+* Auto login after account activation.
+* One step install (No need to create an activate page).
+* Display standard WooCommerce notices (Fixed display issue of the free version).
+* Compatible and supports localisation.
 
 == Installation ==	
 
