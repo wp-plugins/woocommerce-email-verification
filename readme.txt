@@ -16,13 +16,16 @@ WooCommerce email verification plugin sends a verification link on users email t
 
 = WooCommerce email verification - Premium Version =
 
-Please, click [here](http://aihr.us/downloads/custom-bulkquick-edit-premium-wordpress-plugin/) to check the premium version.
+Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-email-verification/) to check the premium version.
 
 = Primary Premium Features =
 
 *Auto login after account activation.
+
 *One step install (No need to create an activate page).
-*Display standard WooCommerce notices. (Fixed display issue of the free version) .
+
+*Display standard WooCommerce notices (Fixed display issue of the free version).
+
 *Compatible and supports localisation.
 
 == Installation ==	
