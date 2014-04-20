@@ -182,9 +182,9 @@ class WEV_Email_Verification{
 		$subject = 'Activate your '.$blogname.' account'; 
 		$message = 'Hello '. $un.',<br/><br/>';
 		$message .= 'To activate your account and access the feature you were trying to view, copy and paste the following link into your web browser:';
-		$message .= "<br/>";
+		$message .= "<br/><a href='";
 		$message .= home_url('/').'activate?passkey='.$hash;
-		$message .= "<br/><br/>";
+		$message .= "'>".home_url('/').'activate?passkey='.$hash."</a><br/><br/>";
 		$message .= "Thank you for registering with us.";
 		$message .= '<br/><br/>Yours sincerely,<br/>'.$blogname;
 
