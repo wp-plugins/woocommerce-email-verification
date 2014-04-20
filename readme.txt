@@ -8,11 +8,11 @@ Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin enables email verification on user registration.
+This plugin enables email verification on user registration. 
 
 == Description ==
 
-WooCommerce email verification plugin sends a verification link on users email to activate their account on user registration. 
+WooCommerce email verification plugin sends a verification link on users email to activate their account on user registration. This will prevent users by leaving fake e-mails and can then download the product in their download area.  This plugin help you to mange your orders far easier and more reliable.
 
 = WooCommerce email verification - Premium Version =
 
