@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: WooCommerce Email Verification
- * Version: 1.0.0
+ * Version: 2.2.0
  * Plugin URI: http://wordpress.org/plugins/woocommerce-email-verification/
  * Description: Sends a verification link on users mail ID to activate their account after register.
  * Author: subhansanjaya
@@ -12,6 +12,8 @@
 if(! defined( 'ABSPATH' )) exit; // Exit if accessed directly
 
 require('includes/class-wev-email-verification.php');
+
+global $wev;
 $wev = new WEV_Email_Verification();
 
 register_activation_hook( __FILE__,  'wev_install'  );
