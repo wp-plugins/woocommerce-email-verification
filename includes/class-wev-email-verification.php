@@ -51,7 +51,7 @@ class WEV_Email_Verification{
 	$create_user = $this->wev_create_new_customer($email, $username, $password);
 
 	if ($create_user ){
-			echo "Account activation successful. Please, click <a href='".home_url()."/my-account/'>here</a> to login." ;
+			echo "Account activation successful. Please, click <a href='".home_url()."/mein-konto/'>here</a> to login." ;
 	}else{
 
 		wp_redirect( home_url() ); exit;
@@ -79,7 +79,7 @@ class WEV_Email_Verification{
 			$reg_date = date("Y-m-d H:i:s");
 
 								$sql = $wpdb->prepare(
-			"INSERT INTO `".wp_users."`
+			"INSERT INTO `{$wpdb->base_prefix}users`
 			(`user_login`, `user_pass`, `user_email`, `user_nicename`, `display_name`, `user_registered`)
 			VALUES(%s, %s, %s,%s, %s, %s)",
 			array($username,$password,$email,$username, $username,$reg_date)
@@ -91,7 +91,7 @@ class WEV_Email_Verification{
 			$ud = $user_id->ID;
 
 			$user = new WP_User( $ud );
-			$user ->add_role( 'customer' );
+			$user ->add_role( 'customer' ); 
 	
 	do_action( 'woocommerce_created_customer', $ud, $new_customer_data, $password_generated);
 	return true;
@@ -117,7 +117,7 @@ class WEV_Email_Verification{
 		global $wpdb, $wp_version;
 		$sSql = $wpdb->prepare("
 		SELECT *
-		FROM `".wp_users."`
+		FROM `{$wpdb->base_prefix}users`
 		WHERE `ID` = %d
 		LIMIT 1
 		",
@@ -145,7 +145,7 @@ class WEV_Email_Verification{
 		);
 		$wpdb->query($sql);
 
-			$sSql = $wpdb->prepare("DELETE FROM `".wp_users."`
+			$sSql = $wpdb->prepare("DELETE FROM `{$wpdb->base_prefix}users`
 					WHERE `ID` = %d
 					LIMIT 1", $user_id);
 			$wpdb->query($sSql);
