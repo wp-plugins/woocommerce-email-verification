@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=subha
 Tags: woocommerce account verification, email validation, woocommerce email verification, account activation, woocommerce, email, checkout, woocommerce register, email verification
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-ema
 1. In the admin panel plugins page click Add New. Then click on "upload" link. Select the downloaded zip file and install it OR
 Download the zip file and extract it. Upload "woocommerce email verification" folder  to your plugins directory (wp-content/plugins/).
 
-2. Activate the plugin through the 'Plugins' menu in WordPress. 	
+2. Activate the plugin through the “Plugins” menu in WordPress. 	
 
 3. Create a page with name "activate". (URL should be yourwebsitedomain.com/activate) and put the following short code and save it.
 [woocommerce-email-verification]
