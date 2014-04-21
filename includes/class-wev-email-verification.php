@@ -51,7 +51,7 @@ class WEV_Email_Verification{
 	$create_user = $this->wev_create_new_customer($email, $username, $password);
 
 	if ($create_user ){
-			echo "Account activation successful. Please, click <a href='".home_url()."/mein-konto/'>here</a> to login." ;
+			echo "Account activation successful. Please, click <a href='".home_url()."/my-account/'>here</a> to login." ;
 	}else{
 
 		wp_redirect( home_url() ); exit;
