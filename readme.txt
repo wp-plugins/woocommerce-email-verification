@@ -23,7 +23,8 @@ Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-ema
 * Auto login after account activation.
 * One step install (No need to create an activate page).
 * Display standard WooCommerce notices (Fixed display notices/messages issue of the free version).
-* Compatible and supports localisation.
+* Compatible and supports localisation.(It has built-in translations for English (UK), English (US) German and Spanish and you can add your language easily).
+* Fully customizable.
 
 == Installation ==	
 
