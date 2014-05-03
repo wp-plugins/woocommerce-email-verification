@@ -36,7 +36,6 @@ class WEV_Email_Verification{
 
 	$data = $wpdb->get_row($sSql, ARRAY_A);
 
-
 	// Preset the form fields
 	$form = array(
 		'user_email' => $data['user_email'],
@@ -77,25 +76,24 @@ class WEV_Email_Verification{
 
 	if(is_null(username_exists( $username ))){
 
-		$reg_date = date("Y-m-d H:i:s");
+			$reg_date = date("Y-m-d H:i:s");
 
 								$sql = $wpdb->prepare(
-			"INSERT INTO `".wp_users."`
+			"INSERT INTO `{$wpdb->base_prefix}users`
 			(`user_login`, `user_pass`, `user_email`, `user_nicename`, `display_name`, `user_registered`)
 			VALUES(%s, %s, %s,%s, %s, %s)",
 			array($username,$password,$email,$username, $username,$reg_date)
 		);
 
+			$customer_id =	$wpdb->query($sql);
 
-			//Assign Role
-			$user = get_user_by( 'user_email', $email);
-            $user->set_role( 'customer' );
+			$user_id = get_user_by( 'email', $email);
+			$ud = $user_id->ID;
 
-
-
-		$customer_id =	$wpdb->query($sql);
-
-	do_action( 'woocommerce_created_customer', $customer_id, $new_customer_data, $password_generated);
+			$user = new WP_User( $ud );
+			$user ->add_role( 'customer' ); 
+	
+	do_action( 'woocommerce_created_customer', $ud, $new_customer_data, $password_generated);
 	return true;
 
 	}else{
@@ -111,7 +109,7 @@ class WEV_Email_Verification{
 	}
 
 	public function create_temp_user($user_id){
-
+	if ( !current_user_can( 'manage_options' ) ) {
 		global $woocommerce;
 
 		if (!$user_id) return;
@@ -119,7 +117,7 @@ class WEV_Email_Verification{
 		global $wpdb, $wp_version;
 		$sSql = $wpdb->prepare("
 		SELECT *
-		FROM `".wp_users."`
+		FROM `{$wpdb->base_prefix}users`
 		WHERE `ID` = %d
 		LIMIT 1
 		",
@@ -147,26 +145,17 @@ class WEV_Email_Verification{
 		);
 		$wpdb->query($sql);
 
-			$sSql = $wpdb->prepare("DELETE FROM `".wp_users."`
+			$sSql = $wpdb->prepare("DELETE FROM `{$wpdb->base_prefix}users`
 					WHERE `ID` = %d
 					LIMIT 1", $user_id);
 			$wpdb->query($sSql);
 		
-
 			if ( ! is_object( $woocommerce ) || version_compare( $woocommerce->version, '2.1', '<' ) ) {
-
-					$p = 	$woocommerce->add_message( 'Hi there' );
-					echo $p ;
-
-
+			$woocommerce->add_message( 'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
 			}else{
-
-
-				$p = 	wc_add_notice(  'A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.' );
-				echo $p ;
-
+			wc_add_notice('A confirmation link has been sent to your email address. Please follow the instructions in the email to activate your account.',$notice_type = 'success');
 			}
-
+		}
 
 	}
 
@@ -179,9 +168,9 @@ class WEV_Email_Verification{
 		$subject = 'Activate your '.$blogname.' account'; 
 		$message = 'Hello '. $un.',<br/><br/>';
 		$message .= 'To activate your account and access the feature you were trying to view, copy and paste the following link into your web browser:';
-		$message .= "<br/>";
-		$message .= home_url('/').'activate?id='.$un.'&passkey='.$hash;
-		$message .= "<br/><br/>";
+		$message .= "<br/><a href='";
+		$message .= home_url('/').'activate?passkey='.$hash;
+		$message .= "'>".home_url('/').'activate?passkey='.$hash."</a><br/><br/>";
 		$message .= "Thank you for registering with us.";
 		$message .= '<br/><br/>Yours sincerely,<br/>'.$blogname;
 
