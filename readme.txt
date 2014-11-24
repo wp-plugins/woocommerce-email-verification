@@ -14,18 +14,18 @@ This plugin enables email verification on user registration.
 
 WooCommerce email verification plugin sends a verification link on users email to activate their account on user registration. This will prevent users by leaving fake e-mails and can then download the product in their download area.  This plugin help you to mange your orders far easier and more reliable.
 
-= WooCommerce email verification - Premium Version =
+= WooCommerce email verification - Pro =
 
-Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-email-verification/) to check the premium version.
+Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-email-verification/) to check the Pro version.
 
-= Premium version Features =
+= Pro version Features =
 * Manage unverified accounts. 
 * Compatible with WooCommerce Points and Rewards.
 * Auto login after account activation.
 * One step install (No need to create an activate page).
 * Display standard WooCommerce notices (Fixed display notices/messages issue of the free version).
-* Compatible and supports localisation.(It has built-in translations for English (UK), English (US) German and Spanish and you can add your language easily).
-* Fully customisable.
+* Compatible and supports localisation.(It has built-in translations for English (UK), English (US), Traditional Chinease, German and Spanish and you can add your language easily).
+* Easy customisable.
 
 == Installation ==	
 
