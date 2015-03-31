@@ -31,9 +31,6 @@ Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-ema
 * Compatible and supports localisation.(It has built-in translations for English (UK), English (US), Traditional Chinease, German and Spanish and you can add your language easily).
 * Easy customisable.
 
-[youtube https://www.youtube.com/watch?v=9ueRPat4aoA]
-short admin panel overview of the pro version, video does not contain any sound
-
 == Installation ==	
 
 **Installation Instruction & Configuration**  	
