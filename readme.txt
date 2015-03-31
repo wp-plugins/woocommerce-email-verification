@@ -19,13 +19,20 @@ WooCommerce email verification plugin sends a verification link on users email t
 Please, click [here](http://weaveapps.com/shop/wordpress-plugins/woocommerce-email-verification/) to check the Pro version.
 
 = Pro version Features =
-* Manage unverified accounts. 
+* Compatible with the latest version of WordPress and WooCommerce. 
+* Manage unverified accounts.
+* Integrated with automatic updates. 
+* Works with custom user input fields.
+* Works with any type of products including digital goods. 
 * Compatible with WooCommerce Points and Rewards.
 * Auto login after account activation.
 * One step install (No need to create an activate page).
 * Display standard WooCommerce notices (Fixed display notices/messages issue of the free version).
 * Compatible and supports localisation.(It has built-in translations for English (UK), English (US), Traditional Chinease, German and Spanish and you can add your language easily).
 * Easy customisable.
+
+[youtube http://www.youtube.com/watch?v=7EiKx_WSesk]
+short admin panel overview of the pro version, video does not contain any sound
 
 == Installation ==	
 
